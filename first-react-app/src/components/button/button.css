@@ -1,0 +1,17 @@
+.Button{
+    background: transparent;
+    border: 1px solid;
+    border-radius: .3em;
+    color: #222;
+    cursor: pointer;
+    padding: .4em .6em;
+}
+
+.Button:hover{
+    text-decoration: underline;
+}
+
+.Button--variant-primary{
+    background: rebeccapurple;
+    color: #fff;
+}
