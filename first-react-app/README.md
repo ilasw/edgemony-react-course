@@ -34,3 +34,18 @@ Unità di misura in CSS
 
 
 ### Riferimenti
+
+Fondamentali:
+- HTML dataset: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
+- JS falsy: https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+
+Librerie:
+- Libreria utile per gestire le classsi dinamiche: https://www.npmjs.com/package/classnames
+
+Miscellaneus:
+- Tool per conoscere il peso di una libreria: https://bundlephobia.com/
+
+Siti per mettere online il nostro codice:
+- Vercel: https://vercel.com/
+- Render: https://render.com/
+- Netlify: https://www.netlify.com/
