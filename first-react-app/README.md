@@ -53,6 +53,16 @@ Siti per mettere online il nostro codice:
 
 ## 22-12-22
 
+### Esercizi
+- Creare un componente `<Header />` e un comp. `<Footer />`; 
+- Nel componennte `<Header />` stampare una lista di link, partendo da un array statico; (tip: array.map)
+- Creare un componente `<Layout>` che abbia al proprio interno: 
+ - Header (comp);
+ - <main> (html puro) al cui interno proiettiamo {children};
+ - Footer (comp);
+- All'interno di App usare il componente Layout per riuscire a nascondere elementi che ci servirebbero in tutto il sito (header, footer, ...);
+
+
 ### Riferimenti
 
 SASS:
