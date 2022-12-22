@@ -49,3 +49,19 @@ Siti per mettere online il nostro codice:
 - Vercel: https://vercel.com/
 - Render: https://render.com/
 - Netlify: https://www.netlify.com/
+
+
+## 22-12-22
+
+### Riferimenti
+
+SASS:
+- Learn: https://sass-lang.com/guide
+- Come aggiungerlo in CRA: https://create-react-app.dev/docs/adding-a-sass-stylesheet/ 
+
+TailwindCSS
+- Tailwind: https://tailwindcss.com/ 
+- Libreria componenti tailwindcss: https://www.hyperui.dev/ 
+
+CSS functions:
+- min/max/clamp: https://developer.mozilla.org/en-US/docs/Web/CSS/clamp 

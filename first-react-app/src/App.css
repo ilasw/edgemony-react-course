@@ -1,4 +1,7 @@
 .App {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
   text-align: center;
 }
 
@@ -24,4 +27,9 @@
 
 .text-xl{
   font-size: 1.6rem;
+}
+
+.container{
+  margin: 0 auto;
+  width: min(88%, 1200px);
 }
