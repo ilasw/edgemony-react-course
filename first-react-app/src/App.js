@@ -3,6 +3,7 @@ import {Button} from "./atoms/button/Button";
 import { Text } from './atoms/text/Text';
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
+import { Container } from './layout/container/Container';
 
 function App() {
 
@@ -12,9 +13,18 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <Text as='h1'
-              style={{ color: customColor }} 
-              variant='title'>Hello world!</Text>
+        <Container>Ciao Mondo!!</Container> 
+        {/* div.container > contenuto */}
+
+        <Container withRow={0}>
+          <Text as='h1'
+                style={{ color: customColor }} 
+                variant='title'
+                >Hello world!</Text>
+        </Container>
+        {/* .container > .row > contenuto */}
+
+        
         {/* {Button(propsButton1)} */}
         {/* <Button label={propsButton2.label} 
                 title={propsButton2.title} /> */}

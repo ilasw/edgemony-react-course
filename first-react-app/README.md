@@ -65,3 +65,6 @@ TailwindCSS
 
 CSS functions:
 - min/max/clamp: https://developer.mozilla.org/en-US/docs/Web/CSS/clamp 
+
+Rimuovere node_modules facilmente: 
+- Da terminale `npx npkill`: https://www.npmjs.com/package/npkill
