@@ -1,3 +1,36 @@
+## 23-12-22
+
+### Esercizi
+- Creare una nuova app, che all'interno abbia una `todo list`;
+- Avremo un componente `<TodoList>` che all'interno avrà:
+    - <ul> che contiene una lista di 6 elementi statici; ```[{label: 'a'},...]```;
+    - Ogni elemento statico verrà renderizzato con un `items.map(...)`;
+    - Per ogni elemento avremo un bottone per impostare l'item a [done];
+    - Cliccando sul button lo imposteremo a done;
+L'importante non sarà avere un state con tutto incorporato, ma che visivamente funzioni e che avremo almeno uno state per ogni elemento della lista.
+
+Suggerimento di svolgimento:
+```jsx
+
+function TodoItem ({ label }){
+    const isDone = useState(false);
+
+    return // ....
+}
+
+function TodoList (){
+    const items = [...];
+
+    return ( item.map(item => <TodoItem ... />) )
+}
+
+```
+
+### Riferimenti
+
+- Localstorage/Session/Cookie
+
+
 ## 22-12-22
 
 ### Esercizi

@@ -6,12 +6,6 @@ import './button.css';
  2- attributi passati al componente nel JSX
 */
 
-const buttonVariantMap = {
-  primary: 'text-xl color-pink',
-  secondary: 'text-sm color-red'
-}
-// ${buttonVariantMap[variant] ?? ''}
-
 export function Button(props) {
   console.log('props di Button:', props);
 
