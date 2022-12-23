@@ -1,4 +1,4 @@
-## 23-12-22
+## 23-12-22 useState, useEffect
 
 ### Esercizi
 - Creare una nuova app, che all'interno abbia una `todo list`;
@@ -10,8 +10,8 @@
 L'importante non sarà avere un state con tutto incorporato, ma che visivamente funzioni e che avremo almeno uno state per ogni elemento della lista.
 
 Suggerimento di svolgimento:
-```jsx
 
+```jsx
 function TodoItem ({ label }){
     const isDone = useState(false);
 
@@ -23,12 +23,13 @@ function TodoList (){
 
     return ( item.map(item => <TodoItem ... />) )
 }
-
 ```
 
 ### Riferimenti
+- Local/Session storage: https://javascript.info/localstorage
+- Cookies: https://javascript.info/cookie 
 
-- Localstorage/Session/Cookie
+- useEffect: https://reactjs.org/docs/hooks-effect.html
 
 
 ## 22-12-22
@@ -61,7 +62,7 @@ Rimuovere node_modules facilmente:
 
 ----
 
-## 21-12-22
+## 21-12-22 Component props e composizione 
 
 ### Esercizi:
 - Modificare il componente Button in modo da gestire diversi stili passati da un prop `variant`;
@@ -88,7 +89,7 @@ Siti per mettere online il nostro codice:
 
 ----
 
-## 20-12-22
+## 20-12-22 JSX e Componenti
 
 ### Esercizi:
 - Creare una mini applicazione che stampi a video "Hello World" e che sia eseguibile
@@ -113,6 +114,4 @@ Accessibilità:
 
 Unità di misura in CSS
 - px, em, rem, vh, vw, vmin, vmax, ...: https://www.w3schools.com/cssref/css_units.asp
-
-
 
