@@ -1,65 +1,75 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-import {TodoList} from './components/todo-list/TodoList';
 
-// Creare un app che mi permetta di visualizzare a schermo un button
-// Cliccando sul button devo poter estrarre un numero da 1 a 90;
-// Una volta visualizzato il numero, il bottone non deve essere più cliccabile.
+const API_ENDPOINT = {
+  BASE: `https://random-data-api.com/api/v2`,
 
-function Lottery(props){
+  get BEERS() {
+    return `${this.BASE}/beers`;
+  },
 
-  const {word} = props;
-
-  const [number, setNumber] = useState();
-  const pickANumber = () => Math.round(Math.random() * 91); // round, ceil, floor
-
-  const lotteryButtonClick = () => {
-    const newNumber = pickANumber();
-    setNumber(newNumber); // setTimeout(() => { setState()... }, 0);
-    console.log(`hai cliccato sul lottery button, numero estratto ${newNumber}!`);
-  }
-
-  return (
-    <div>
-      <h1>Lotteria</h1>
-      <p>Numero estratto: `{number}`</p>
-      <LotteryButton wasDraw={Number.isInteger(number)} clickHandler={lotteryButtonClick} />
-      {/* <p>Somma di numeri</p>
-      <Sum a={2} b={3} word={word} /> */}
-    </div> 
-  );
+  CREDIT_CARDS: `credit_cards`
 }
 
-function LotteryButton (props){
-  const {
-    clickHandler,
-    wasDraw, 
-    ...attributes
-  } = props;
-
-  console.log(clickHandler);
-
-  return <button disabled={!!wasDraw}
-                 onClick={clickHandler}
-                 {...attributes}
-  >{!!wasDraw ? 'Numero estratto' : 'Clicca per estrarre un numero'}</button>
-}
-
-function Sum (props){
-  const {a, b, word} = props;
-  console.log(`La parola segreta è ${word}`)
-  return `La somma è ${a + b}`;
-}
+/*
+  Scriviamo una app che al caricamento mostri una birra suggerita ed un pulsante,
+  al click del pulsante caricare una nuova birra random 
+*/
 
 function App() {
+  const [randomBeer, setRandomBeer] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const mySecret = 'pippo';
+  const fetchNewBeer = () => {
+    setLoading(true);
+    setError(null);
+
+    fetch(API_ENDPOINT.BEERS)
+      .then(r => r.json())
+      .then(beer => {
+        console.log({ beer });
+        setRandomBeer(beer)
+      })
+      .catch((err) => {
+        console.error(err)
+        setError(err)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }
+
+  console.log('fuori da useEffect')
+
+  // primo parametro:   funzione da eseguire
+  // secondo parametro: array di dipendenze, ogni volta in cui cambia una variabile eseguire function
+  useEffect(() => {
+
+    fetchNewBeer();
+    
+    return () => {
+      console.log('unmount');
+    }
+  }, [])
+
+  if(loading){
+    return `Caricamento in corso...`;
+  }
+
+  if(error || !randomBeer){
+    return `Errore di connessione al server, provare a ricaricare la pagina`;
+  }
+
+  const {id, brand, name, style, alcohol} = randomBeer;
 
   return (
     <div className="App">
-      {/* <TodoList /> */}
-
-      <Lottery word={mySecret} />
+      <div>Beer code: {id}</div>
+      <h1>{brand} - {name}</h1>
+      <h2>{style} - {alcohol}</h2>
+      <hr />
+      <button onClick={() => fetchNewBeer()}>Cheers! 🍻</button>
     </div>
   );
 }
