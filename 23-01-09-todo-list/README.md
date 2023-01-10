@@ -1,3 +1,20 @@
+## 23-01-10 useEffect & API Call
+
+### Esercizi
+- 1) Creare una app per l'estrazione di numeri, caricando l'app sarà visibile:
+    - lista di numeri estratti;
+    - bottone per l'estrazione, al click estrae un nuovo numero, si disabilita al 6° numero estratto.
+
+- 2) Creare un app per visualizzare un dato random al load, poi tramite un button caricare un nuovo contenuto al click. Usare come fonte di dati https://random-data-api.com/documentation
+
+
+### Riferimenti
+- Sourcetree: https://www.sourcetreeapp.com/
+- Custom hooks: https://reactjs.org/docs/hooks-custom.html#extracting-a-custom-hook
+
+----
+
+
 ## 23-01-09 Ripassone
 
 ### Esercizi
