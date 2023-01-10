@@ -16,7 +16,7 @@ const API_ENDPOINT = {
   al click del pulsante caricare una nuova birra random 
 */
 
-function App() {
+function useRandomBeer() {
   const [randomBeer, setRandomBeer] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -40,18 +40,20 @@ function App() {
       })
   }
 
-  console.log('fuori da useEffect')
-
-  // primo parametro:   funzione da eseguire
-  // secondo parametro: array di dipendenze, ogni volta in cui cambia una variabile eseguire function
   useEffect(() => {
-
     fetchNewBeer();
-    
-    return () => {
-      console.log('unmount');
-    }
   }, [])
+
+  return { randomBeer, loading, setLoading, error, fetchNewBeer };
+}
+
+function App() {
+  const { 
+    randomBeer, 
+    loading, 
+    error, 
+    fetchNewBeer 
+  } = useRandomBeer();
 
   if(loading){
     return `Caricamento in corso...`;
